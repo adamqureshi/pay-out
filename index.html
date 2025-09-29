@@ -1,206 +1,228 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PAY-OUT — Buy/Sell a Tesla Safely</title>
-  <meta name="description" content="PAY-OUT is a simple, marketplace-agnostic way to pay and get paid when buying or selling a Tesla. Powered by partners like Trustap." />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PAY-OUT — Buy / Sell a Tesla Safely</title>
+<meta name="description" content="PAY-OUT by Only Used Tesla. A simple, trusted way to pay and get paid when buying or selling a Tesla. Powered by Trustap." />
 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --ink:#0b1220; --muted:#6b7280; --brand:#111827;
-      --accent:#22c55e; --bg1:#f7fafc; --bg2:#ffffff; --ring:rgba(34,197,94,.25);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      color:var(--ink); background:linear-gradient(180deg,#f5fbff 0%,#fff 70%);
-    }
-    a{color:inherit}
-    .container{max-width:980px;margin:0 auto;padding:24px}
-    .nav{display:flex;align-items:center;justify-content:space-between}
-    .logo{font-weight:800;letter-spacing:.2px}
-    .badge{display:inline-block;background:#ecfdf5;color:#065f46;border:1px solid #bbf7d0;padding:4px 10px;border-radius:999px;font-size:12px}
-    .hero{padding:42px 0 18px}
-    h1{font-size:40px;line-height:1.05;margin:6px 0 8px}
-    .lead{font-size:18px;color:#1f2937;margin:6px 0 18px}
-    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    @media (max-width:900px){.grid2{grid-template-columns:1fr}}
-    .card{background:var(--bg2);border:1px solid #e5e7eb;border-radius:16px;padding:18px;box-shadow:0 6px 16px rgba(2,6,23,.06)}
-    .kicker{font-size:12px;letter-spacing:.12em;color:#6b7280;text-transform:uppercase}
-    .btn{appearance:none;border:0;background:#111827;color:#fff;padding:14px 18px;border-radius:12px;font-weight:700;cursor:pointer}
-    .btn.secondary{background:#f3f4f6;color:#111827;border:1px solid #e5e7eb}
-    .input,select{width:100%;padding:12px 14px;border:1px solid #e5e7eb;border-radius:12px;font-size:14px}
-    .input:focus,select:focus{outline:0;border-color:#86efac;box-shadow:0 0 0 6px var(--ring)}
-    .tiny{font-size:12px;color:var(--muted)}
-    .list{display:grid;gap:8px}
-    .check{color:var(--accent);font-weight:800;margin-right:6px}
-    .footer{margin:36px 0 16px;color:var(--muted);font-size:13px;text-align:center}
-  </style>
+<style>
+  /* Brand (from guide): primary #E54546; dark #0D263C; slate #5A717F; light #E5DADA; accents #91B3CB, #B6ACA4 */
+  :root{
+    --brand:#E54546;
+    --ink:#0D263C;
+    --muted:#5A717F;
+    --paper:#ffffff;
+    --soft:#E5DADA;
+    --soft2:#B6ACA4;
+    --sky:#91B3CB;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0; font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(1200px 600px at -10% -10%, #F7FAFF, transparent 60%),
+      radial-gradient(1200px 600px at 110% 10%, #FFF4F2, transparent 60%),
+      #ffffff;
+  }
+  a{color:inherit}
+  .container{max-width:980px;margin:0 auto;padding:24px}
+  .nav{display:flex;align-items:center;justify-content:space-between}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
+  .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid #E7EAEE;padding:6px 10px;border-radius:999px;font-size:12px;color:var(--muted)}
+  .hero{padding:40px 0 22px}
+  h1{font-size:40px;line-height:1.05;margin:10px 0 6px}
+  .lead{font-size:18px;color:var(--muted);margin:8px 0 18px}
+  .split{
+    display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:20px;overflow:hidden;
+    box-shadow:0 12px 36px rgba(13,38,60,.12); border:1px solid #eef0f3;
+  }
+  .card{
+    background:#fff;padding:24px
+  }
+  .left{
+    background:linear-gradient(180deg,#F1FAFF 0%, #FFF 70%);
+  }
+  .right{
+    background:#F6F7F9;
+  }
+  .mini{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin:0 0 6px}
+  .big{font-size:56px;font-weight:800;margin:18px 0}
+  .go{
+    display:inline-flex;align-items:center;gap:8px;border:2px solid var(--ink);border-radius:999px;padding:10px 16px;
+    text-decoration:none;font-weight:700
+  }
+  .go:hover{transform:translateY(-1px)}
+  .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+  .btn{
+    appearance:none;border:0;background:var(--ink);color:#fff;padding:14px 18px;border-radius:12px;
+    font-weight:700;cursor:pointer;text-decoration:none
+  }
+  .btn.alt{background:#fff;color:var(--ink);border:1px solid #e5e7eb}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media (max-width:900px){.split{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}}
+  .section{margin-top:24px}
+  .panel{background:#fff;border:1px solid #eef0f3;border-radius:16px;padding:18px;box-shadow:0 8px 24px rgba(13,38,60,.06)}
+  .kicker{font-size:12px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+  .list{display:grid;gap:8px;margin-top:8px}
+  .check{color:var(--brand);font-weight:800;margin-right:6px}
+  .price{
+    display:flex;align-items:baseline;gap:8px;margin:8px 0 2px
+  }
+  .price b{font-size:28px}
+  .footer{margin:36px 0 16px;color:var(--muted);font-size:13px;text-align:center}
+  .tag{display:inline-block;padding:4px 8px;border:1px solid #e6e7ea;border-radius:999px;font-size:12px;color:#334155}
+</style>
 </head>
 <body>
   <div class="container">
 
     <!-- NAV -->
     <div class="nav">
-      <div class="logo">PAY-OUT</div>
-      <div class="badge">From Only Used Tesla</div>
+      <div class="logo">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="2" opacity=".15"></circle>
+          <path d="M7 13.5 11 17l7-9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        PAY-OUT
+      </div>
+      <span class="pill">From Only Used Tesla • est. 2017</span>
     </div>
 
-    <!-- HERO -->
+    <!-- HERO SPLIT (Buyer / Seller) -->
     <section class="hero">
-      <span class="badge">Use on ANY marketplace</span>
-      <h1>Buy / Sell a Tesla safely with <span style="white-space:nowrap">PAY-OUT</span>.</h1>
-      <p class="lead">
-        A simple, secure way to pay (and get paid) when you’re buying or selling a Tesla.
-        Create a link or QR, share it with the other party, and complete the deal with confidence.
-      </p>
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <a class="btn" href="#start">Try PAY-OUT</a>
-        <a class="btn secondary" href="#how">How it works</a>
-      </div>
-      <p class="tiny" style="margin-top:8px">
-        EV-first. Marketplace-agnostic. Built by Only Used Tesla (est. 2017). Settlement is powered by trusted partners.
-      </p>
-    </section>
-
-    <!-- WHAT IS PAY-OUT -->
-    <section id="what" class="grid2">
-      <div class="card">
-        <div class="kicker">What is PAY-OUT?</div>
-        <h3>New from Only Used Tesla</h3>
-        <p>PAY-OUT is a checkout layer for private-party Tesla sales. If you’re buying or selling and want a secure way to transfer funds, use PAY-OUT. Works with Craigslist, Facebook, forums—anywhere.</p>
-        <p class="tiny">We’ll add other EVs too. Have an I.C.E. vehicle? Join the waitlist below and we’ll notify you when we support gas cars.</p>
-      </div>
-      <div class="card">
-        <div class="kicker">Partnered with Trustap</div>
-        <h3>Best-in-class, worry-free checkout</h3>
-        <div class="list">
-          <div><span class="check">✓</span>All-in-one transaction flow (payments, shipping facilitation, support)</div>
-          <div><span class="check">✓</span>Fraud & chargeback protection with dispute management</div>
-          <div><span class="check">✓</span>Escrow-style buyer protection — funds held until completion</div>
-          <div><span class="check">✓</span>Higher conversions via trusted, secure checkout</div>
-          <div><span class="check">✓</span>Supported integrations for marketplaces and ecommerce</div>
-          <div><span class="check">✓</span>Time-saving dispute resolution & customer support</div>
+      <div class="split">
+        <div class="card left">
+          <p class="mini">I’m a</p>
+          <div class="big">buyer</div>
+          <a class="go" id="buyerBtn" href="#">→ Get started</a>
         </div>
-        <p class="tiny" style="margin-top:8px">Powered by Trustap. Still unsure? Start a demo below and we’ll walk you through it.</p>
+        <div class="card right">
+          <p class="mini">I’m a</p>
+          <div class="big">seller</div>
+          <a class="go" id="sellerBtn" href="#">→ Get started</a>
+        </div>
+      </div>
+
+      <p class="lead" style="margin-top:16px">
+        PAY-OUT is a simple, trusted way to pay (and get paid) for a Tesla on **any marketplace**.
+        Create a secure link or QR, share it, and complete the deal with confidence — powered by Trustap.
+      </p>
+      <div class="ctaRow">
+        <a class="btn" href="#how">How PAY-OUT works</a>
+        <a class="btn alt" href="#pricing">Pricing</a>
+        <a class="btn" href="mailto:payout@onlyusedtesla.com?subject=PAY-OUT%20Question">Contact</a>
       </div>
     </section>
 
     <!-- HOW IT WORKS -->
-    <section id="how" class="grid2" style="margin-top:16px">
-      <div class="card">
+    <section id="how" class="section grid2">
+      <div class="panel">
         <div class="kicker">How it works</div>
-        <h3>Create a link or QR in seconds</h3>
-        <ol style="margin:0 0 10px 18px; padding:0;">
-          <li>Seller enters VIN & price → gets a secure **Pay Link** (and a QR if needed)</li>
-          <li>Buyer pays via **ACH / card / wallet** through our partner’s protected checkout</li>
-          <li>Funds are held until the handoff (or shipper pickup), then released</li>
+        <h3>Three simple steps</h3>
+        <ol style="margin:6px 0 10px 18px;padding:0">
+          <li>Buyer & Seller add basic info (VIN, price, details)</li>
+          <li>Buyer sends payment to PAY-OUT (Trustap-powered checkout)</li>
+          <li>Seller gets paid by direct deposit or check after handoff / BoL</li>
         </ol>
-        <p class="tiny">We show clear status to both sides. For shipped deals we require a Bill of Lading before release.</p>
+        <div class="tag">Escrow-style: funds held until completion</div>
       </div>
-      <div class="card">
+      <div class="panel">
         <div class="kicker">Why it’s safer</div>
-        <h3>No cashiers checks. No meetups at the bank.</h3>
-        <ul style="margin:0 0 0 18px">
-          <li>Escrow-style protection and fraud screening</li>
-          <li>Dispute handling & chargeback management</li>
-          <li>Paper trail & notifications for both parties</li>
+        <h3>No cashier’s checks. No bank meetups.</h3>
+        <ul class="list" style="margin-left:18px">
+          <li><span class="check">✔</span>Fraud & chargeback protection with dispute management</li>
+          <li><span class="check">✔</span>Ownership + payment verification (licensed dealer partner)</li>
+          <li><span class="check">✔</span>Paper trail, notifications, and BoL requirement for shipped deals</li>
         </ul>
       </div>
     </section>
 
-    <!-- START DEMO / LEAD -->
-    <section id="start" class="card" style="margin-top:16px">
-      <div class="kicker">Start</div>
-      <h3>Get a PAY-OUT link (demo)</h3>
-      <p class="tiny">This is a non-transactional demo. We’ll email you a preview link and next steps.</p>
-      <form class="grid2" onsubmit="event.preventDefault(); sendLead();">
-        <div>
-          <label class="tiny">Are you a buyer or seller?</label>
-          <select id="role" class="input" required>
-            <option value="seller">Seller</option>
-            <option value="buyer">Buyer</option>
-          </select>
+    <!-- TRUSTED REASONS -->
+    <section class="section panel">
+      <div class="kicker">Why businesses trust Trustap</div>
+      <h3>Best-in-class, end-to-end transaction solution</h3>
+      <div class="grid2">
+        <div class="list">
+          <div><span class="check">✓</span>All-in-one flow: payments, shipment facilitation, support</div>
+          <div><span class="check">✓</span>Advanced chargeback management — win more disputes</div>
+          <div><span class="check">✓</span>Escrow-style buyer protection builds trust & conversions</div>
         </div>
-        <div>
-          <label class="tiny">VIN</label>
-          <input id="vin" class="input" placeholder="5YJ3E1EA..." />
+        <div class="list">
+          <div><span class="check">✓</span>Easy integrations for marketplaces & ecommerce</div>
+          <div><span class="check">✓</span>Time-saving dispute resolution & customer support</div>
+          <div><span class="check">✓</span>Backed by Only Used Tesla’s community reputation</div>
         </div>
-        <div>
-          <label class="tiny">Vehicle</label>
-          <input id="vehicle" class="input" placeholder="2023 Tesla Model Y Long Range" />
+      </div>
+      <p class="mini" style="margin-top:10px">Powered by Trustap.</p>
+    </section>
+
+    <!-- REASONS TO USE PAY-OUT (your copy) -->
+    <section class="section panel">
+      <div class="kicker">More reasons to use PAY-OUT</div>
+      <div class="grid2">
+        <div class="list">
+          <div><span class="check">✓</span>We can verify ownership & payment as a licensed dealer partner</div>
+          <div><span class="check">✓</span>Sellers: it’s our responsibility to collect from the buyer—you sign an agreement ensuring you receive payment</div>
         </div>
-        <div>
-          <label class="tiny">Price (USD)</label>
-          <input id="price" class="input" type="number" min="0" step="500" placeholder="34800" />
+        <div class="list">
+          <div><span class="check">✓</span>Buyers: we collect the title from the seller or lienholder—your agreement ensures we send you a clear title</div>
+          <div><span class="check">✓</span>Use with any marketplace. Grab a link or QR and share it with your counterparty</div>
         </div>
-        <div>
-          <label class="tiny">Your email</label>
-          <input id="email" class="input" type="email" placeholder="you@example.com" required />
-        </div>
-        <div style="align-self:end">
-          <button class="btn" type="submit">Email me my Pay Link</button>
-        </div>
-      </form>
-      <div id="linkOut" class="tiny" style="display:none;margin-top:10px">
-        We’ve opened an email draft with your details. Send it and we’ll reply with your demo link.
       </div>
     </section>
 
-    <!-- ICE WAITLIST -->
-    <section class="card" style="margin-top:16px">
-      <div class="kicker">Not an EV?</div>
-      <h3>We love EVs—gas support coming soon.</h3>
-      <form onsubmit="event.preventDefault(); alert('Thanks! You’re on the ICE waitlist.');" style="display:flex;gap:10px;flex-wrap:wrap">
-        <input class="input" type="email" placeholder="name@email.com" required />
-        <button class="btn secondary" type="submit">Join ICE waitlist</button>
-      </form>
+    <!-- PRICING -->
+    <section id="pricing" class="section grid2">
+      <div class="panel">
+        <div class="kicker">Pricing</div>
+        <h3>Simple & transparent</h3>
+        <div class="price"><b>$198</b><span>total (buyer + seller)</span></div>
+        <p class="mini">+$99 surcharge for loan payoff (if applicable)</p>
+        <p class="lead" style="margin-top:8px">Buy or sell on Only Used Tesla easily and safely—100% online.</p>
+        <div class="ctaRow">
+          <a class="btn" href="mailto:payout@onlyusedtesla.com?subject=I%20am%20buying%20a%20Tesla%20and%20need%20a%20secure%20way%20to%20pay">I’m buying a Tesla</a>
+          <a class="btn alt" href="mailto:payout@onlyusedtesla.com?subject=I%20am%20selling%20a%20Tesla%20and%20want%20to%20use%20PAY-OUT">I’m selling a Tesla</a>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="kicker">Questions?</div>
+        <h3>We’re here to help</h3>
+        <p>Check the PAY-OUT FAQ or email us any time.</p>
+        <div class="ctaRow">
+          <a class="btn" href="mailto:payout@onlyusedtesla.com?subject=PAY-OUT%20FAQ%20request">Request the FAQ</a>
+          <a class="btn alt" href="mailto:payout@onlyusedtesla.com?subject=General%20question">Contact support</a>
+        </div>
+      </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="footer">
-      © <span id="yr"></span> Only Used Tesla • PAY-OUT • Demo page for concept testing.  
-      <br />Questions? <a href="mailto:hello@onlyusedtesla.com">hello@onlyusedtesla.com</a>
+      © <span id="yr"></span> Only Used Tesla • PAY-OUT • “A secure payment solution when buying / selling a Tesla.”  
+      <br />Email: <a href="mailto:payout@onlyusedtesla.com">payout@onlyusedtesla.com</a>
     </footer>
-
   </div>
 
-  <script>
-    // Auto-uppercase VIN
-    const vinEl = document.getElementById('vin');
-    vinEl.addEventListener('input', () => { vinEl.value = vinEl.value.toUpperCase(); });
+<script>
+  // Buyer/Seller hero buttons → prefilled mailto drafts
+  const buyerBtn = document.getElementById('buyerBtn');
+  const sellerBtn = document.getElementById('sellerBtn');
+  buyerBtn.addEventListener('click', (e)=> {
+    e.preventDefault();
+    window.location.href = 'mailto:payout@onlyusedtesla.com?subject=I%20am%20buying%20a%20Tesla%20and%20need%20a%20secure%20way%20to%20pay&body=Hi%20OUT%20team%2C%0A%0AI%27m%20buying%20a%20Tesla%20and%20want%20to%20use%20PAY-OUT.%20Please%20help%20me%20get%20started.%0A%0AThanks!';
+  });
+  sellerBtn.addEventListener('click', (e)=> {
+    e.preventDefault();
+    window.location.href = 'mailto:payout@onlyusedtesla.com?subject=I%20am%20selling%20a%20Tesla%20and%20want%20to%20use%20PAY-OUT&body=Hi%20OUT%20team%2C%0A%0AI%27m%20selling%20a%20Tesla%20and%20want%20to%20use%20PAY-OUT.%20Please%20help%20me%20get%20started.%0A%0AThanks!';
+  });
 
-    // Mailto lead capture
-    function sendLead(){
-      const role = document.getElementById('role').value;
-      const vin = (document.getElementById('vin').value || 'VIN123TEST').toUpperCase().replace(/\s/g,'');
-      const vehicle = document.getElementById('vehicle').value || 'Tesla (demo)';
-      const price = document.getElementById('price').value || '0';
-      const email = document.getElementById('email').value || '';
-
-      const preview = `https://pay-out.demo/link?role=${encodeURIComponent(role)}&vin=${encodeURIComponent(vin)}&vehicle=${encodeURIComponent(vehicle)}&price=${encodeURIComponent(price)}&email=${encodeURIComponent(email)}`;
-
-      const body =
-`Role: ${role}
-VIN: ${vin}
-Vehicle: ${vehicle}
-Price: $${price}
-User Email: ${email}
-
-Preview (placeholder): ${preview}
-
-(From PAY-OUT landing demo)`;
-      const mailto = `mailto:hello@onlyusedtesla.com?subject=${encodeURIComponent('PAY-OUT Lead — ' + role + ' ' + vin)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailto;
-      document.getElementById('linkOut').style.display = 'block';
-    }
-
-    document.getElementById('yr').textContent = new Date().getFullYear();
-  </script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
+
